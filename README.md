@@ -9,7 +9,7 @@
 A standalone cross-platform (macOS/Linux) **GNU sed**
 binary distribution, intended for reproducible builds.
 
-The main target is Ubuntu 18, whose older version of this utility
+The main target is macOS 10.13, whose older version of this utility
 fails some builds.
 
 In addition to the the binary archives and the package meta data,
@@ -106,16 +106,12 @@ xpacks/xpack-dev-tools-sed/.content/
 ├── bin
 │   ├── gsed -> sed
 │   └── sed
-├── distro-info
-│   ├── CHANGELOG.md
-│   ├── licenses
-│   └── scripts
-├── libexec
-│   └── libiconv.2.dylib
-└── share
-    └── info
+└── distro-info
+    ├── CHANGELOG.md
+    ├── licenses
+    └── scripts
 
-7 directories, 5 files
+4 directories, 4 files
 ```
 
 No other files are installed in any system folders or other locations.

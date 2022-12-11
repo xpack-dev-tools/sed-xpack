@@ -82,8 +82,6 @@ In the `xpack-dev-tools/sed-xpack` Git repo:
 - pull new changes
 - if needed, merge the `xpack` branch
 
-No need to add a tag here, it'll be added when the release is created.
-
 ### Check the latest upstream release
 
 Check the GNU sed [releases](https://ftp.gnu.org/gnu/sed/)
@@ -210,6 +208,18 @@ caffeinate ssh xbbmi
 
 Repeat the same steps as before.
 
+```sh
+git -C ~/Work/gcc-xpack.git pull && \
+xpm run deep-clean -C ~/Work/gcc-xpack.git && \
+xpm install -C ~/Work/gcc-xpack.git && \
+git -C ~/Work/xbb-helper-xpack.git pull && \
+xpm link -C ~/Work/xbb-helper-xpack.git && \
+xpm run link-deps -C ~/Work/gcc-xpack.git && \
+xpm run deep-clean --config darwin-x64  -C ~/Work/gcc-xpack.git && \
+xpm install --config darwin-x64 -C ~/Work/gcc-xpack.git && \
+caffeinate xpm run build-develop --config darwin-x64 -C ~/Work/gcc-xpack.git
+```
+
 Several minutes later, the output of the build script is a compressed
 archive and its SHA signature, created in the `deploy` folder:
 
@@ -233,46 +243,15 @@ caffeinate ssh xbbma
 Update the build scripts (or clone them at the first use):
 
 ```sh
-git -C ~/Work/sed-xpack.git pull
-
-xpm run deep-clean -C ~/Work/sed-xpack.git
-```
-
-If the helper is also under development and needs changes,
-update it too:
-
-```sh
-git -C ~/Work/xbb-helper-xpack.git pull
-```
-
-Install project dependencies:
-
-```sh
-xpm run install -C ~/Work/sed-xpack.git
-```
-
-If the writable helper is used,
-link it in the place of the read-only package:
-
-```sh
-xpm link -C ~/Work/xbb-helper-xpack.git
-
-xpm run link-deps -C ~/Work/sed-xpack.git
-```
-
-For repeated builds, clean the build folder and install de
-build configuration dependencies:
-
-```sh
-xpm run deep-clean --config darwin-arm64  -C ~/Work/sed-xpack.git
-
-xpm install --config darwin-arm64 -C ~/Work/sed-xpack.git
-```
-
-Run the native build:
-
-```sh
-caffeinate xpm run build-develop --config darwin-arm64 -C ~/Work/sed-xpack.git
+git -C ~/Work/gcc-xpack.git pull && \
+xpm run deep-clean -C ~/Work/gcc-xpack.git && \
+xpm install -C ~/Work/gcc-xpack.git && \
+git -C ~/Work/xbb-helper-xpack.git pull && \
+xpm link -C ~/Work/xbb-helper-xpack.git && \
+xpm run link-deps -C ~/Work/gcc-xpack.git && \
+xpm run deep-clean --config darwin-arm64  -C ~/Work/gcc-xpack.git && \
+xpm install --config darwin-arm64 -C ~/Work/gcc-xpack.git && \
+caffeinate xpm run build-develop --config darwin-arm64 -C ~/Work/gcc-xpack.git
 ```
 
 Several minutes later, the output of the build script is a compressed
@@ -299,32 +278,13 @@ caffeinate ssh xbbli
 Update the build scripts (or clone them at the first use):
 
 ```sh
-git -C ~/Work/sed-xpack.git pull
-
-xpm run deep-clean -C ~/Work/sed-xpack.git
-```
-
-Clean the build folder and prepare the docker container:
-
-```sh
-xpm run deep-clean --config linux-x64 -C ~/Work/sed-xpack.git
-
-xpm run docker-prepare --config linux-x64 -C ~/Work/sed-xpack.git
-```
-
-If the helper is also under development and needs changes,
-link it in the place of the read-only package:
-
-```sh
-git -C ~/Work/xbb-helper-xpack.git pull
-
-xpm run docker-link-deps --config linux-x64 -C ~/Work/sed-xpack.git
-```
-
-Run the docker build:
-
-```sh
-xpm run docker-build-develop --config linux-x64 -C ~/Work/sed-xpack.git
+git -C ~/Work/gcc-xpack.git pull && \
+xpm run deep-clean -C ~/Work/gcc-xpack.git && \
+xpm run deep-clean --config linux-x64 -C ~/Work/gcc-xpack.git && \
+xpm run docker-prepare --config linux-x64 -C ~/Work/gcc-xpack.git && \
+git -C ~/Work/xbb-helper-xpack.git pull && \
+xpm run docker-link-deps --config linux-x64 -C ~/Work/gcc-xpack.git && \
+xpm run docker-build-develop --config linux-x64 -C ~/Work/gcc-xpack.git
 ```
 
 Several minutes later, the output of the build script is a compressed
@@ -353,37 +313,13 @@ caffeinate ssh xbbla64
 Update the build scripts (or clone them at the first use):
 
 ```sh
-git -C ~/Work/sed-xpack.git pull
-
-xpm run deep-clean -C ~/Work/sed-xpack.git
-```
-
-If the helper is also under development and needs changes,
-update it too:
-
-```sh
-git -C ~/Work/xbb-helper-xpack.git pull
-```
-
-For repeated builds, clean the build folder and prepare the docker container:
-
-```sh
-xpm run deep-clean --config linux-arm64 -C ~/Work/sed-xpack.git
-
-xpm run docker-prepare --config linux-arm64 -C ~/Work/sed-xpack.git
-```
-
-If the writable helper is used,
-link it in the place of the read-only package:
-
-```sh
-xpm run docker-link-deps --config linux-arm64 -C ~/Work/sed-xpack.git
-```
-
-Run the docker build:
-
-```sh
-xpm run docker-build-develop --config linux-arm64 -C ~/Work/sed-xpack.git
+git -C ~/Work/gcc-xpack.git pull && \
+xpm run deep-clean -C ~/Work/gcc-xpack.git && \
+xpm run deep-clean --config linux-arm64 -C ~/Work/gcc-xpack.git && \
+xpm run docker-prepare --config linux-arm64 -C ~/Work/gcc-xpack.git && \
+git -C ~/Work/xbb-helper-xpack.git pull && \
+xpm run docker-link-deps --config linux-arm64 -C ~/Work/gcc-xpack.git && \
+xpm run docker-build-develop --config linux-arm64 -C ~/Work/gcc-xpack.git
 ```
 
 Several minutes later, the output of the build script is a compressed
@@ -408,37 +344,13 @@ caffeinate ssh xbbla32
 Update the build scripts (or clone them at the first use):
 
 ```sh
-git -C ~/Work/sed-xpack.git pull
-
-xpm run deep-clean -C ~/Work/sed-xpack.git
-```
-
-If the helper is also under development and needs changes,
-update it too:
-
-```sh
-git -C ~/Work/xbb-helper-xpack.git pull
-```
-
-For repeated builds, clean the build folder and prepare the docker container:
-
-```sh
-xpm run deep-clean --config linux-arm -C ~/Work/sed-xpack.git
-
-xpm run docker-prepare --config linux-arm -C ~/Work/sed-xpack.git
-```
-
-If the writable helper is used,
-link it in the place of the read-only package:
-
-```sh
-xpm run docker-link-deps --config linux-arm -C ~/Work/sed-xpack.git
-```
-
-Run the docker build:
-
-```sh
-xpm run docker-build-develop --config linux-arm -C ~/Work/sed-xpack.git
+git -C ~/Work/gcc-xpack.git pull && \
+xpm run deep-clean -C ~/Work/gcc-xpack.git && \
+xpm run deep-clean --config linux-arm -C ~/Work/gcc-xpack.git && \
+xpm run docker-prepare --config linux-arm -C ~/Work/gcc-xpack.git && \
+git -C ~/Work/xbb-helper-xpack.git pull && \
+xpm run docker-link-deps --config linux-arm -C ~/Work/gcc-xpack.git && \
+xpm run docker-build-develop --config linux-arm -C ~/Work/gcc-xpack.git
 ```
 
 Several minutes later, the output of the build script is a compressed
@@ -590,8 +502,8 @@ Install the binaries on all platforms.
 On GNU/Linux and macOS systems, use:
 
 ```sh
-.../xpack-sed-4.9.0-1/bin/grealpath --version
-sed (GNU sed) 4.9.0
+.../xpack-sed-4.9.0-1/bin/gsed --version
+sed (GNU sed) 4.9
 ```
 
 ## Create a new GitHub pre-release draft
