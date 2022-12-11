@@ -1,2 +1,6 @@
 # sed-xpack
-A binary xPack with GNU sed
+
+A binary xPack with GNU sed.
+
+This project does not use the `master` branch, please
+switch to the `xpack` branch to get the project files.
