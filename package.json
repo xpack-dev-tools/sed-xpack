@@ -37,32 +37,28 @@
     "minimumXpmRequired": "0.14.0",
     "binaries": {
       "destination": "./.content",
-      "baseUrl": "https://github.com/xpack-dev-tools/sed-xpack/releases/download/v1.4.19-1",
+      "baseUrl": "https://github.com/xpack-dev-tools/sed-xpack/releases/download/v4.9.0-1",
       "skip": 1,
       "platforms": {
         "darwin-arm64": {
           "fileName": "xpack-sed-4.9.0-1-darwin-arm64.tar.gz",
-          "sha256": "356876be46079cc5768f0144210170bd9991f6651fbba930983fb160f92047e1"
+          "sha256": "032880fbb0356a63d1a6333894d36be8324fb73b0a35a9ef0c2ec37cfac6ea83"
         },
         "darwin-x64": {
           "fileName": "xpack-sed-4.9.0-1-darwin-x64.tar.gz",
-          "sha256": "31162614d87b873953590d68e51a7112e205edc11fbba1ee4b6fca296ff8da7d"
+          "sha256": "d137339f6bcebe3908ced860ed3ee23da05a2a78b86ba8fbd2f80af56e0b196f"
         },
         "linux-arm64": {
           "fileName": "xpack-sed-4.9.0-1-linux-arm64.tar.gz",
-          "sha256": "e51ec78b5c28d30cfcaec166a63f5f510c7aed361c04662a1462afd70b6fbcf8"
+          "sha256": "8982ea70fd9f8b371a5ccd2457e49ed4f28dda1e60af4fdbcb3ff09aa8344103"
         },
         "linux-arm": {
           "fileName": "xpack-sed-4.9.0-1-linux-arm.tar.gz",
-          "sha256": "88869ac3668ba24c82375fd027629e31fb045cc1c3d801d195d5e1947590910f"
+          "sha256": "7f708ce80f0cff763a0497e4f245014d5694a7a0c86739f4f961ece49d8802d8"
         },
         "linux-x64": {
           "fileName": "xpack-sed-4.9.0-1-linux-x64.tar.gz",
-          "sha256": "9f327c07506c5f620af13dd5009738560cb443feeabeac362947946b1f241d3d"
-        },
-        "win32-x64": {
-          "fileName": "xpack-sed-4.9.0-1-win32-x64.zip",
-          "sha256": "4d7f22b905187d9c2510dc45d18cdf93441dbce56bebf2934e8c93819962be17"
+          "sha256": "582b2fbeb1affe610e4c2d3e5917427fff5d71ff5ea679a0d0a023ca73648e4a"
         }
       }
     },
@@ -209,7 +205,7 @@
           "common-dependencies",
           "common-actions",
           "common-actions-native"
-       ],
+        ],
         "devDependencies": {
           "@xpack-dev-tools/clang": "14.0.6-2.1",
           "@xpack-dev-tools/realpath": "9.1.0-1.1"
