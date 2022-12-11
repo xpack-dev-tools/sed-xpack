@@ -71,7 +71,7 @@
       "sed": "./.content/bin/sed"
     },
     "devDependencies": {
-      "@xpack-dev-tools/xbb-helper": "^0.11.11"
+      "@xpack-dev-tools/xbb-helper": "^0.11.12"
     },
     "properties": {
       "appName": "GNU sed",
