@@ -537,7 +537,7 @@ In the `xpack/web-jekyll` GitHub repo:
 - select the `develop` branch
 - copy the new file to `_posts/releases/sed`
 - update version and date from last
-[release](https://github.com/sed/ninja/releases/).
+[release](https://ftp.gnu.org/gnu/sed/).
 
 If any, refer to closed
 [issues](https://github.com/xpack-dev-tools/sed-xpack/issues/).
