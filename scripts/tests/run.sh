@@ -14,9 +14,7 @@ function tests_run_all()
 {
   local test_bin_path="$1"
 
-  (
-    sed_test "${test_bin_path}"
-  )
+  sed_test "${test_bin_path}"
 }
 
 # -----------------------------------------------------------------------------

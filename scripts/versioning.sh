@@ -10,7 +10,7 @@
 
 # -----------------------------------------------------------------------------
 
-function build_application_versioned_components()
+function application_build_versioned_components()
 {
   XBB_SED_VERSION="$(echo "${XBB_RELEASE_VERSION}" | sed -e 's|-.*||')"
   if [[ "${XBB_SED_VERSION}" =~ [0-9]+\.[0-9]+\.0 ]]
@@ -36,7 +36,7 @@ function build_application_versioned_components()
     xbb_set_libraries_install_path "${XBB_DEPENDENCIES_INSTALL_FOLDER_PATH}"
 
     # https://ftp.gnu.org/pub/gnu/libiconv/
-    build_libiconv "1.17"
+    libiconv_build "1.17"
 
     # -------------------------------------------------------------------------
     # Build the application binaries.
