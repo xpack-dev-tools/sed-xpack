@@ -4,7 +4,7 @@
 
 # Maintainer info
 
-## Project repository
+## Get project sources
 
 The project is hosted on GitHub:
 
@@ -30,7 +30,16 @@ git clone \
   ~/Work/sed-xpack.git
 ```
 
-Same for the helper and link it to the central xPacks store:
+Or, if the repo was already cloned:
+
+```sh
+git -C ~/Work/sed-xpack.git pull
+```
+
+## Get helper sources
+
+The project has a dependency to a common **helper**; clone the
+`xpack-develop` branch and link it to the central xPacks store:
 
 ```sh
 rm -rf ~/Work/xbb-helper-xpack.git && \
@@ -42,13 +51,10 @@ git clone \
 xpm link -C ~/Work/xbb-helper-xpack.git
 ```
 
-Or, if the repos were already cloned:
+Or, if the repo was already cloned:
 
 ```sh
 git -C ~/Work/sed-xpack.git pull
-
-git -C ~/Work/xbb-helper-xpack.git pull
-xpm link -C ~/Work/xbb-helper-xpack.git
 ```
 
 ## Prerequisites
@@ -216,7 +222,7 @@ git -C ~/Work/xbb-helper-xpack.git pull && \
 xpm link -C ~/Work/xbb-helper-xpack.git && \
 xpm run link-deps -C ~/Work/sed-xpack.git && \
 xpm run deep-clean --config darwin-x64  -C ~/Work/sed-xpack.git && \
-xpm install --config darwin-x64 -C ~/Work/sed-xpack.git && \
+xpm install --config darwin-x64 -C ~/Work/sed-xpack.git
 caffeinate xpm run build-develop --config darwin-x64 -C ~/Work/sed-xpack.git
 ```
 
@@ -250,7 +256,7 @@ git -C ~/Work/xbb-helper-xpack.git pull && \
 xpm link -C ~/Work/xbb-helper-xpack.git && \
 xpm run link-deps -C ~/Work/sed-xpack.git && \
 xpm run deep-clean --config darwin-arm64  -C ~/Work/sed-xpack.git && \
-xpm install --config darwin-arm64 -C ~/Work/sed-xpack.git && \
+xpm install --config darwin-arm64 -C ~/Work/sed-xpack.git
 caffeinate xpm run build-develop --config darwin-arm64 -C ~/Work/sed-xpack.git
 ```
 
@@ -283,7 +289,7 @@ xpm run deep-clean -C ~/Work/sed-xpack.git && \
 xpm run deep-clean --config linux-x64 -C ~/Work/sed-xpack.git && \
 xpm run docker-prepare --config linux-x64 -C ~/Work/sed-xpack.git && \
 git -C ~/Work/xbb-helper-xpack.git pull && \
-xpm run docker-link-deps --config linux-x64 -C ~/Work/sed-xpack.git && \
+xpm run docker-link-deps --config linux-x64 -C ~/Work/sed-xpack.git
 xpm run docker-build-develop --config linux-x64 -C ~/Work/sed-xpack.git
 ```
 
@@ -318,7 +324,7 @@ xpm run deep-clean -C ~/Work/sed-xpack.git && \
 xpm run deep-clean --config linux-arm64 -C ~/Work/sed-xpack.git && \
 xpm run docker-prepare --config linux-arm64 -C ~/Work/sed-xpack.git && \
 git -C ~/Work/xbb-helper-xpack.git pull && \
-xpm run docker-link-deps --config linux-arm64 -C ~/Work/sed-xpack.git && \
+xpm run docker-link-deps --config linux-arm64 -C ~/Work/sed-xpack.git
 xpm run docker-build-develop --config linux-arm64 -C ~/Work/sed-xpack.git
 ```
 
@@ -349,7 +355,7 @@ xpm run deep-clean -C ~/Work/sed-xpack.git && \
 xpm run deep-clean --config linux-arm -C ~/Work/sed-xpack.git && \
 xpm run docker-prepare --config linux-arm -C ~/Work/sed-xpack.git && \
 git -C ~/Work/xbb-helper-xpack.git pull && \
-xpm run docker-link-deps --config linux-arm -C ~/Work/sed-xpack.git && \
+xpm run docker-link-deps --config linux-arm -C ~/Work/sed-xpack.git
 xpm run docker-build-develop --config linux-arm -C ~/Work/sed-xpack.git
 ```
 
@@ -408,6 +414,13 @@ screen -S ga
 ~/actions-runners/xpack-dev-tools/run.sh &
 
 # Ctrl-a Ctrl-d
+```
+
+For `xbbli` & `xbbla64` start two runners:
+
+```sh
+~/actions-runners/xpack-dev-tools/1/run.sh &
+~/actions-runners/xpack-dev-tools/2/run.sh &
 ```
 
 Check that the project is pushed to GitHub.
@@ -497,7 +510,23 @@ The test results are available from
 
 ### Manual tests
 
-Install the binaries on all platforms.
+To download the pre-released archive for the specific platform
+and run the tests, use:
+
+```sh
+xpm run test-pre-release
+```
+
+For even more tests, on each platform (MacOS, GNU/Linux, Windows),
+download the archive from
+[pre-releases/test](https://github.com/xpack-dev-tools/pre-releases/releases/tag/test/)
+and check the binaries.
+
+On macOS, remove the `com.apple.quarantine` flag:
+
+```sh
+xattr -dr com.apple.quarantine ${HOME}/Downloads/xpack-*
+```
 
 On GNU/Linux and macOS systems, use:
 

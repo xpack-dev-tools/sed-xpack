@@ -100,8 +100,8 @@ After install, the package should create a structure like this (macOS files;
 only the first two depth levels are shown):
 
 ```console
-$ tree -L 2 xpacks/xpack-dev-tools-sed/.content/
-xpacks/xpack-dev-tools-sed/.content/
+$ tree -L 2 /Users/ilg/Library/xPacks/\@xpack-dev-tools/sed/4.9.0-1.1/.content/
+/Users/ilg/Library/xPacks/\@xpack-dev-tools/sed/4.9.0-1.1/.content/
 ├── README.md
 ├── bin
 │   ├── gsed -> sed
