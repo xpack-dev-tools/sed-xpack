@@ -13,13 +13,13 @@
 function application_build_versioned_components()
 {
   XBB_SED_VERSION="$(echo "${XBB_RELEASE_VERSION}" | sed -e 's|-.*||')"
-  if [[ "${XBB_SED_VERSION}" =~ [0-9]+\.[0-9]+\.0 ]]
+  if [[ "${XBB_SED_VERSION}" =~ [0-9]+[.][0-9]+[.]0 ]]
   then
     XBB_SED_VERSION="$(echo "${XBB_SED_VERSION}" | sed -e 's|.0$||')"
   fi
 
   # Keep them in sync with combo archive content.
-  if [[ "${XBB_RELEASE_VERSION}" =~ 4\.9\.*-* ]]
+  if [[ "${XBB_RELEASE_VERSION}" =~ 4[.]9[.].*-.* ]]
   then
     # -------------------------------------------------------------------------
     # Build the native dependencies.
