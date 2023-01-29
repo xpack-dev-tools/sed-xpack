@@ -37,6 +37,7 @@
     "libexec",
     "libiconv",
     "liquidjs",
+    "loglevel",
     "ncipollo",
     "npmignore",
     "npmjs",
