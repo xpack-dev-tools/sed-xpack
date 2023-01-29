@@ -4,6 +4,7 @@ Entries in this file are in reverse chronological order.
 
 ## 2023-01-29
 
+* v4.9.0-2 released
 * db07b15 package.json: bump deps
 * 5c470ac README update
 * be3daf7 .vscode/settings.json: ignoreWords
