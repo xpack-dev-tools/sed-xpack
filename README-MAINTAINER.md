@@ -231,8 +231,8 @@ archive and its SHA signature, created in the `deploy` folder:
 ```console
 $ ls -l ~/Work/sed-xpack.git/build/darwin-x64/deploy
 total 256
--rw-r--r--  1 ilg  staff  125631 Dec 11 10:05 xpack-sed-4.9.0-2-darwin-x64.tar.gz
--rw-r--r--  1 ilg  staff     102 Dec 11 10:05 xpack-sed-4.9.0-2-darwin-x64.tar.gz.sha
+-rw-r--r--  1 ilg  staff  125750 Jan 29 10:08 xpack-sed-4.9.0-2-darwin-x64.tar.gz
+-rw-r--r--  1 ilg  staff     102 Jan 29 10:08 xpack-sed-4.9.0-2-darwin-x64.tar.gz.sha
 ```
 
 #### Apple Silicon macOS
@@ -263,9 +263,9 @@ archive and its SHA signature, created in the `deploy` folder:
 
 ```console
 $ ls -l ~/Work/sed-xpack.git/build/darwin-arm64/deploy
-total 240
--rw-r--r--  1 ilg  staff  116149 Dec 11 10:09 xpack-sed-4.9.0-2-darwin-x64.tar.gz
--rw-r--r--  1 ilg  staff     102 Dec 11 10:09 xpack-sed-4.9.0-2-darwin-x64.tar.gz.sha
+total 248
+-rw-r--r--  1 ilg  staff  120653 Jan 29 10:08 xpack-sed-4.9.0-2-darwin-arm64.tar.gz
+-rw-r--r--  1 ilg  staff     104 Jan 29 10:08 xpack-sed-4.9.0-2-darwin-arm64.tar.gz.sha
 ```
 
 #### Intel GNU/Linux
@@ -299,8 +299,8 @@ archive and its SHA signature, created in the `deploy` folder:
 ```console
 $ ls -l ~/Work/sed-xpack.git/build/linux-x64/deploy
 total 124
--rw-r--r-- 1 ilg ilg 120800 Dec 11 08:11 xpack-sed-4.9.0-2-linux-x64.tar.gz
--rw-r--r-- 1 ilg ilg    101 Dec 11 08:11 xpack-sed-4.9.0-2-linux-x64.tar.gz.sha
+-rw-r--r-- 1 ilg ilg 121106 Jan 29 08:08 xpack-sed-4.9.0-2-linux-x64.tar.gz
+-rw-r--r-- 1 ilg ilg    101 Jan 29 08:08 xpack-sed-4.9.0-2-linux-x64.tar.gz.sha
 ```
 
 ##### Build the Windows binaries
@@ -336,8 +336,8 @@ archive and its SHA signature, created in the `deploy` folder:
 ```console
 $ ls -l ~/Work/sed-xpack.git/build/linux-arm64/deploy
 total 124
--rw-r--r-- 1 ilg ilg 118827 Dec 11 08:15 xpack-sed-4.9.0-2-linux-arm64.tar.gz
--rw-r--r-- 1 ilg ilg    103 Dec 11 08:15 xpack-sed-4.9.0-2-linux-arm64.tar.gz.sha
+-rw-r--r-- 1 ilg ilg 119529 Jan 29 08:10 xpack-sed-4.9.0-2-linux-arm64.tar.gz
+-rw-r--r-- 1 ilg ilg    103 Jan 29 08:10 xpack-sed-4.9.0-2-linux-arm64.tar.gz.sha
 ```
 
 #### Arm GNU/Linux 32-bit
@@ -369,8 +369,8 @@ archive and its SHA signature, created in the `deploy` folder:
 ```console
 $ ls -l ~/Work/sed-xpack.git/build/linux-arm/deploy
 total 116
--rw-r--r-- 1 ilg ilg 113420 Dec 11 08:15 xpack-sed-4.9.0-2-linux-arm.tar.gz
--rw-r--r-- 1 ilg ilg    101 Dec 11 08:15 xpack-sed-4.9.0-2-linux-arm.tar.gz.sha
+-rw-r--r-- 1 ilg ilg 114077 Jan 29 08:10 xpack-sed-4.9.0-2-linux-arm.tar.gz
+-rw-r--r-- 1 ilg ilg    101 Jan 29 08:10 xpack-sed-4.9.0-2-linux-arm.tar.gz.sha
 ```
 
 ### Files cache
