@@ -8,7 +8,7 @@ summary: "Version **{{ XBB_RELEASE_VERSION }}** is a maintenance release; it fix
 summary: "Version **{{ XBB_RELEASE_VERSION }}** is a new release; it follows the upstream release."
 
 sed_version: "4.9"
-sed_date: "2022-11-06"
+sed_date: "6 Nov 2022"
 
 version: "{{ XBB_RELEASE_VERSION }}"
 npm_subversion: "1"
