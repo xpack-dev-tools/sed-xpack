@@ -4,6 +4,10 @@ Entries in this file are in reverse chronological order.
 
 ## 2023-09-06
 
+* v4.9.0-3 released
+* d73da1d README update
+* deb1502 README update
+* 30a4ee3 CHANGELOG update
 * 6e13b6d README update
 * bbebb02 templates/jekyll update
 * e33c8c9 package.json bump deps
