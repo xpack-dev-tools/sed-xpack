@@ -2,9 +2,15 @@
 
 Entries in this file are in reverse chronological order.
 
+## 2023-09-06
+
+* 6e13b6d README update
+* bbebb02 templates/jekyll update
+* e33c8c9 package.json bump deps
+
 ## 2023-09-05
 
-* v4.9.0-3 prepared
+* f9b1415 prepare v4.9.0-3
 * 3030258 dot.*ignore update
 * 1cfd150 re-generate workflows
 * 49495e1 READMEs update
