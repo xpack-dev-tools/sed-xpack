@@ -115,7 +115,7 @@ $ tree -L 2 /Users/ilg/Library/xPacks/\@xpack-dev-tools/sed/4.9.0-3.1/.content/
     ├── licenses
     └── scripts
 
-4 directories, 4 files
+5 directories, 4 files
 ```
 
 No other files are installed in any system folders or other locations.
