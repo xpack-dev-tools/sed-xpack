@@ -32,28 +32,28 @@
     "minimumXpmRequired": "0.16.3",
     "binaries": {
       "destination": "./.content",
-      "baseUrl": "https://github.com/xpack-dev-tools/sed-xpack/releases/download/v4.9.0-2",
+      "baseUrl": "https://github.com/xpack-dev-tools/sed-xpack/releases/download/v4.9.0-3",
       "skip": 1,
       "platforms": {
         "darwin-arm64": {
-          "fileName": "xpack-sed-4.9.0-2-darwin-arm64.tar.gz",
-          "sha256": "8f1e86ff9f6c2d46327782fc1fb1587d9fdff1fed4b4617044d891b77f557296"
+          "fileName": "xpack-sed-4.9.0-3-darwin-arm64.tar.gz",
+          "sha256": "38341252e6693fd63d641d33faeff1addef383744af4bf983999948df2f01929"
         },
         "darwin-x64": {
-          "fileName": "xpack-sed-4.9.0-2-darwin-x64.tar.gz",
-          "sha256": "be54a2c8f9bf795589b326a7dbb5523529343914577d598a0f47aaa8cbd776bf"
+          "fileName": "xpack-sed-4.9.0-3-darwin-x64.tar.gz",
+          "sha256": "126a31fd2bc33f6c2d7f2167c1a97eb4e014d7777afd0ef52cbe8a5ed429a58a"
         },
         "linux-arm64": {
-          "fileName": "xpack-sed-4.9.0-2-linux-arm64.tar.gz",
-          "sha256": "fbe9da98479f051c71c380e74605c767a89d9e6ddbbc58449325f76ac3d9398a"
+          "fileName": "xpack-sed-4.9.0-3-linux-arm64.tar.gz",
+          "sha256": "f9dd388ac2bd78aa57b7bacfbf96a2b2576718d15d49a77312990b65b21f012b"
         },
         "linux-arm": {
-          "fileName": "xpack-sed-4.9.0-2-linux-arm.tar.gz",
-          "sha256": "17d4455b96fa746c0ccf83d565e5e5222730edc2b4ac40fc81d6d6ae523fe480"
+          "fileName": "xpack-sed-4.9.0-3-linux-arm.tar.gz",
+          "sha256": "ff4d2f88d9959beb33a2526fb22adbbc4cc476e868b6ab3e6eb5909090811222"
         },
         "linux-x64": {
-          "fileName": "xpack-sed-4.9.0-2-linux-x64.tar.gz",
-          "sha256": "0475b166e324ff70581dfc76b38c6c34b6e8688e8fe1d34d9bb257b4726d9b3f"
+          "fileName": "xpack-sed-4.9.0-3-linux-x64.tar.gz",
+          "sha256": "c28ed7c8567c7086b04426c553da42940bc9e66870a120399d6d198ecb8b3580"
         }
       }
     },
