@@ -30,9 +30,8 @@ The binaries can be installed automatically as **binary xPacks** or manually as
 
 ## Release schedule
 
-This distribution is generally one minor release behind the upstream releases.
-In practical terms, when the minor release number changes, it awaits a few
-more weeks to get the latest patch release.
+The xPack GNU sed release schedule generally follows the original GNU
+[releases](https://ftp.gnu.org/gnu/sed/).
 
 ## User info
 
