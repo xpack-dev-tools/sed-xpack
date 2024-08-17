@@ -1,10 +1,10 @@
-![Github Releases (by Release)](https://img.shields.io/github/downloads/xpack-dev-tools/sed-xpack/v{{ XBB_RELEASE_VERSION }}/total.svg)
+![Github Releases (by Release)](https://img.shields.io/github/downloads/xpack-dev-tools/sed-xpack/v{{releaseVersion}}/total.svg)
 
-Version **{{ XBB_RELEASE_VERSION }}** is a maintenance release of the **xPack GNU sed** package; it fixes <...>.
+TODO: select one
 
-Or (TODO: edit!):
+Version **{{releaseVersion}}** is a maintenance release of the **xPack GNU sed** package; it fixes ...
 
-Version **{{ XBB_RELEASE_VERSION }}** is a new release of the **xPack GNU sed** package, following the upstream GNU sed [release](https://ftp.gnu.org/gnu/sed/).
+Version **{{releaseVersion}}** is a new release of the **xPack GNU sed** package, following the upstream GNU sed [release](https://ftp.gnu.org/gnu/sed/).
 
 [Continue reading »](will-be-updated-shortly)
 
