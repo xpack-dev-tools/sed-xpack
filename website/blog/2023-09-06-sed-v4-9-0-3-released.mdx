@@ -1,0 +1,182 @@
+---
+title:  xPack GNU sed v4.9.0-3 released
+
+date: 2023-09-06 15:37:31 +0300
+
+authors: ilg-ul
+
+# To be listed in the Releases page.
+tags:
+  - releases
+
+# ----- Custom properties -----------------------------------------------------
+
+sed_version: "4.9"
+sed_date: "6 Nov 2022"
+
+version: "4.9.0-3"
+npm_subversion: "1"
+
+download_url: https://github.com/xpack-dev-tools/sed-xpack/releases/tag/v4.9.0-3/
+
+---
+
+Version **4.9.0-3** is a maintenance release, built with the latest tools.
+
+<!-- truncate -->
+
+import Image from '@theme/IdealImage';
+
+The [xPack GNU sed](https://xpack.github.io/sed/)
+is a standalone cross-platform binary distribution of
+[GNU sed](https://www.gnu.org/software/sed/).
+
+There are separate binaries for
+**macOS** (x64 and arm64)
+and **GNU/Linux** (x64, arm64 and arm).
+
+:::note Raspberry Pi
+
+The main targets for the GNU/Linux Arm
+binaries are the **Raspberry Pi** class devices (armv7l and aarch64;
+armv6 is not supported).
+
+:::
+
+## Download
+
+The binary files are available from <a href={frontMatter.download_url}>GitHub Releases</a>.
+
+## Prerequisites
+
+- x64 GNU/Linux: any system with **GLIBC 2.27** or higher
+  (like Ubuntu 18 or later, Debian 10 or later, RedHat 8 or later,
+  Fedora 29 or later, etc)
+- arm64/arm GNU/Linux: any system with **GLIBC 2.27** or higher
+  (like Raspberry Pi OS, Ubuntu 18 or later, Debian 10 or later, RedHat 8 or later,
+  Fedora 29 or later, etc)
+- x64 macOS: 10.13 or later
+- arm64 macOS: 11.6 or later
+
+## Install
+
+The full details of installing the **xPack GNU sed** on various platforms
+are presented in the [Install Guide](/docs/install/).
+
+## Compliance
+
+The xPack GNU sed generally follows the official
+[GNU sed](https://www.gnu.org/software/sed/) releases.
+
+The current version is based on:
+
+- GNU sed version {frontMatter.sed_version}
+from {frontMatter.sed_date}.
+
+## Changes
+
+Compared to the upstream version, there are no functional changes.
+
+## Bug fixes
+
+- none
+
+## Enhancements
+
+- none
+
+## Known problems
+
+- none
+
+## Documentation
+
+The original documentation is available
+[online](https://www.gnu.org/software/sed/manual/).
+
+## Build
+
+The binaries for all supported platforms
+(Windows, macOS and GNU/Linux) were built using the
+[xPack Build Box (XBB)](https://xpack.github.io/xbb/), a set
+of build environments based on slightly older distributions, that should be
+compatible with most recent systems.
+
+For the prerequisites and more details on the build procedure, please see the
+[How to build](https://github.com/xpack-dev-tools/sed-xpack/blob/xpack/README-MAINTAINER.md) page.
+
+## CI tests
+
+Before publishing, a set of simple tests were performed on an exhaustive
+set of platforms. The results are available from:
+
+- [GitHub Actions](https://github.com/xpack-dev-tools/sed-xpack/actions/)
+- [Travis CI](https://app.travis-ci.com/github/xpack-dev-tools/sed-xpack/builds/)
+
+## Tests
+
+TBD
+
+## Checksums
+
+The SHA-256 hashes for the files are:
+
+```txt
+38341252e6693fd63d641d33faeff1addef383744af4bf983999948df2f01929
+xpack-sed-4.9.0-3-darwin-arm64.tar.gz
+
+126a31fd2bc33f6c2d7f2167c1a97eb4e014d7777afd0ef52cbe8a5ed429a58a
+xpack-sed-4.9.0-3-darwin-x64.tar.gz
+
+ff4d2f88d9959beb33a2526fb22adbbc4cc476e868b6ab3e6eb5909090811222
+xpack-sed-4.9.0-3-linux-arm.tar.gz
+
+f9dd388ac2bd78aa57b7bacfbf96a2b2576718d15d49a77312990b65b21f012b
+xpack-sed-4.9.0-3-linux-arm64.tar.gz
+
+c28ed7c8567c7086b04426c553da42940bc9e66870a120399d6d198ecb8b3580
+xpack-sed-4.9.0-3-linux-x64.tar.gz
+
+```
+
+## Deprecation notices
+
+### 32-bit support
+
+Support for 32-bit Intel Linux and Intel Windows was
+dropped in 2022. Support for 32-bit Arm Linux (armv7l) will be preserved
+for a while, due to the large user base of 32-bit Raspberry Pi systems.
+
+### Linux minimum requirements
+
+Support for RedHat 7 was dropped in 2022 and the
+minimum requirement was raised to GLIBC 2.27, available starting
+with Ubuntu 18, Debian 10 and RedHat 8.
+
+## Pre-deprecation notice for Ubuntu 18.04
+
+Ubuntu 18.04 LTS _Bionic Beaver_ reached the end of the standard five-year
+maintenance window for Long-Term Support (LTS) release on 31 May 2023.
+
+As a courtesy, the xPack GNU/Linux releases will continue to be based on
+Ubuntu 18.04 for another year.
+
+From 2025 onwards, the GNU/Linux binaries will be built on **Debian 10**,
+(**GLIBC 2.28**), and are also expected to run on RedHat 8.
+
+Users are urged to update their build and test infrastructure to
+ensure a smooth transition to the next xPack releases.
+
+## Download analytics
+
+- GitHub [xpack-dev-tools/sed-xpack](https://github.com/xpack-dev-tools/sed-xpack/)
+  - this release <a href={`https://github.com/xpack-dev-tools/sed-xpack/releases/v${frontMatter.version}/`} ><Image img={`https://img.shields.io/github/downloads/xpack-dev-tools/sed-xpack/v${frontMatter.version}/total.svg`} alt='Github Release' /></a>
+  - all xPack releases [![Github All Releases](https://img.shields.io/github/downloads/xpack-dev-tools/sed-xpack/total.svg)](https://github.com/xpack-dev-tools/sed-xpack/releases/)
+  - [individual file counters](https://somsubhra.github.io/github-release-stats/?username=xpack-dev-tools&repository=sed-xpack) (grouped per release)
+- npmjs.com [@xpack-dev-tools/sed](https://www.npmjs.com/package/@xpack-dev-tools/sed)
+  - latest releases [![npm](https://img.shields.io/npm/dw/@xpack-dev-tools/sed.svg)](https://www.npmjs.com/package/@xpack-dev-tools/sed/)
+  - all @xpack-dev-tools releases [![npm](https://img.shields.io/npm/dt/@xpack-dev-tools/sed.svg)](https://www.npmjs.com/package/@xpack-dev-tools/sed/)
+
+Credit to [Shields IO](https://shields.io) for the badges and to
+[Somsubhra/github-release-stats](https://github.com/Somsubhra/github-release-stats)
+for the individual file counters.
