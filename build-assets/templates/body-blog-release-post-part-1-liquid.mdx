@@ -1,11 +1,6 @@
 ---
 title:  xPack GNU sed v{{releaseVersion}} released
 
-TODO: select one summary
-
-summary: "Version **{{releaseVersion}}** is a maintenance release; it fixes ..."
-
-summary: "Version **{{releaseVersion}}** is a new release; it follows the upstream release."
 
 sed_version: "4.9"
 sed_date: "6 Nov 2022"
@@ -31,6 +26,21 @@ tags:
 
 ---
 
+TODO: select one summary
+
+Version **{{releaseVersion}}** is a maintenance release; it fixes ...
+
+Version **{{releaseVersion}}** is a new release; it follows the upstream release.
+
+<!-- truncate -->
+
+import Image from '@theme/IdealImage';
+import CodeBlock from '@theme/CodeBlock';
+
+import Prerequisites from './_common/_prerequisites-glib-2.27.mdx'
+import DeprecationNotices from './_common/_deprecation-notices-glib-2.27.mdx'
+import DownloadAnalytics from './_common/_download-analytics.mdx'
+
 The [xPack GNU sed](https://xpack-dev-tools.github.io/sed-xpack/)
 is a standalone cross-platform binary distribution of
 [GNU sed](https://www.gnu.org/software/sed/).
@@ -51,9 +61,14 @@ The binary files are available from <a href={frontMatter.download_url}>GitHub Re
 
 ## Install
 
-The full details of installing the **xPack GNU sed** on various platforms
-are presented in the separate
-[Install]({% raw %}{{site.baseurl}}{% endraw %}/dev-tools/sed/install/) page.
+The easiest way to install this specific version, is by using **xpm**:
+
+<CodeBlock language="console"> {
+`xpm install @xpack-dev-tools/{{appLcName}}@${frontMatter.version}.${frontMatter.npm_subversion} -verbose
+`} </CodeBlock>
+
+Comprehensive instructions for installing **xPack {{appName}}** on different platforms
+can be found in the [Install Guide](/docs/install/).
 
 ### Easy install
 
