@@ -42,7 +42,7 @@ export default function Home(): JSX.Element {
   const {siteConfig} = useDocusaurusContext();
   return (
     <Layout 
-      title={`Welcome to sed`}
+      title="Welcome!"
       description="A binary package with the sed executables">
       <HomepageHeader />
       <main>
