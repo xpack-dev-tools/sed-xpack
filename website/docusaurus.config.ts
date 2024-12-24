@@ -197,7 +197,7 @@ const config: Config = {
       attributes: {
         rel: 'icon',
         type: 'image/png',
-        href: '/sed/favicons/favicon-48x48.png',
+        href: '/sed-xpack/favicons/favicon-48x48.png',
         sizes: '48x48'
       }
     },
@@ -206,14 +206,14 @@ const config: Config = {
       attributes: {
         rel: 'icon',
         type: 'image/svg+xml',
-        href: '/sed/favicons/favicon.svg'
+        href: '/sed-xpack/favicons/favicon.svg'
       }
     },
     {
       tagName: 'link',
       attributes: {
         rel: 'shortcut icon',
-        href: '/sed/favicons/favicon.ico'
+        href: '/sed-xpack/favicons/favicon.ico'
       }
     },
     {
@@ -228,7 +228,7 @@ const config: Config = {
       tagName: 'link',
       attributes: {
         rel: 'manifest',
-        href: '/sed/favicons/site.webmanifest'
+        href: '/sed-xpack/favicons/site.webmanifest'
       }
     }
   ],
@@ -424,25 +424,25 @@ const config: Config = {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
     },
-    algolia: {
-      // https://docsearch.algolia.com/docs/docsearch-v3/
-      appId: "KIDD7R4CL1",
-      apiKey: "ca2ffc431941284609f2d50202fc5506",
-      indexName: "xpackio",
+    // algolia: {
+    //   // https://docsearch.algolia.com/docs/docsearch-v3/
+    //   appId: "KIDD7R4CL1",
+    //   apiKey: "ca2ffc431941284609f2d50202fc5506",
+    //   indexName: "xpackio",
 
-      // It ensures that search results are relevant to the current
-      // language and version. Enabled by default.
-      contextualSearch: false, // true,
-      // Optional: Replace parts of the item URLs from Algolia.
-      // Useful when using the same search index for multiple deployments
-      // using a different baseUrl. You can use regexp or string in the
-      // `from` param. For example: localhost:3000 vs myCompany.com/docs
-      // replaceSearchResultPathname: undefined,
-      // Optional: Algolia search parameters
-      searchParameters: {},
-      // Optional: path for search page that enabled by default (`false` to disable it)
-      searchPagePath: false, // 'search',
-    },
+    //   // It ensures that search results are relevant to the current
+    //   // language and version. Enabled by default.
+    //   contextualSearch: false, // true,
+    //   // Optional: Replace parts of the item URLs from Algolia.
+    //   // Useful when using the same search index for multiple deployments
+    //   // using a different baseUrl. You can use regexp or string in the
+    //   // `from` param. For example: localhost:3000 vs myCompany.com/docs
+    //   // replaceSearchResultPathname: undefined,
+    //   // Optional: Algolia search parameters
+    //   searchParameters: {},
+    //   // Optional: path for search page that enabled by default (`false` to disable it)
+    //   searchPagePath: false, // 'search',
+    // },
   } satisfies Preset.ThemeConfig,
 
   customFields: customFields,
