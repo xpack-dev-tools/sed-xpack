@@ -2,12 +2,15 @@
 # DO NOT EDIT!
 # Generated from xpacks/@xpack-dev-tools/xbb-helper/templates/workflows/*.
 #
-# This file is part of the xPack distribution.
-#   (https://xpack.github.io)
-# Copyright (c) 2021 Liviu Ionescu.
+# This file is part of the xPack project (http://xpack.github.io).
+# Copyright (c) 2021 Liviu Ionescu. All rights reserved.
 #
 # Permission to use, copy, modify, and/or distribute this software
 # for any purpose is hereby granted, under the terms of the MIT license.
+#
+# If a copy of the license was not distributed with this file, it can
+# be obtained from https://opensource.org/licenses/mit/.
+#
 # -----------------------------------------------------------------------------
 
 # Simple workflow for deploying static content to GitHub Pages
@@ -46,11 +49,12 @@ concurrency:
 
 jobs:
   # Single deploy job since we're just deploying
+  # https://docs.github.com/en/actions/using-github-hosted-runners/using-github-hosted-runners/about-github-hosted-runners#standard-github-hosted-runners-for-public-repositories
   deploy:
     environment:
       name: github-pages
       url: ${{steps.deployment.outputs.page_url}}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
 
     steps:
       - name: Checkout
@@ -67,7 +71,7 @@ jobs:
           node-version: 20
 
       - name: Install dependencies
-        run: npm install -C website
+        run: npm ci -C website
 
       - name: Generate Docusaurus
         run: npm run build -C website

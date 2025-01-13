@@ -2,12 +2,15 @@
 # DO NOT EDIT!
 # Generated from xpacks/@xpack-dev-tools/xbb-helper/templates/workflows/*.
 #
-# This file is part of the xPack distribution.
-#   (https://xpack.github.io)
-# Copyright (c) 2021 Liviu Ionescu.
+# This file is part of the xPack project (http://xpack.github.io).
+# Copyright (c) 2021 Liviu Ionescu. All rights reserved.
 #
 # Permission to use, copy, modify, and/or distribute this software
 # for any purpose is hereby granted, under the terms of the MIT license.
+#
+# If a copy of the license was not distributed with this file, it can
+# be obtained from https://opensource.org/licenses/mit/.
+#
 # -----------------------------------------------------------------------------
 
 # https://help.github.com/en/actions
@@ -22,6 +25,9 @@
 # https://github.com/actions/download-artifact
 
 # -----------------------------------------------------------------------------
+
+
+
 
 
 name: 'Build xPack GNU sed linux-arm'
@@ -63,6 +69,11 @@ on:
         default: 'xpack-development'
 
 jobs:
+
+
+
+
+
 
   linux-arm-build:
     name: 'linux-arm sed ${{github.event.inputs.version}} build'
@@ -203,4 +214,6 @@ jobs:
         with:
           entrypoint: /bin/bash # /usr/bin/linux32
           args: /github/workspace/build-assets/scripts/test.sh --image debian --version ${{github.event.inputs.version}} --base-url pre-release
+
+
 

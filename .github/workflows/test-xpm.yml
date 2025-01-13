@@ -3,12 +3,15 @@
 # DO NOT EDIT!
 # Generated from xpacks/@xpack-dev-tools/xbb-helper/templates/workflows/*.
 #
-# This file is part of the xPack distribution.
-#   (https://xpack.github.io)
-# Copyright (c) 2021 Liviu Ionescu.
+# This file is part of the xPack project (http://xpack.github.io).
+# Copyright (c) 2021 Liviu Ionescu. All rights reserved.
 #
 # Permission to use, copy, modify, and/or distribute this software
 # for any purpose is hereby granted, under the terms of the MIT license.
+#
+# If a copy of the license was not distributed with this file, it can
+# be obtained from https://opensource.org/licenses/mit/.
+#
 # -----------------------------------------------------------------------------
 
 # https://help.github.com/en/actions
@@ -23,6 +26,9 @@
 # https://github.com/actions/download-artifact
 
 # -----------------------------------------------------------------------------
+
+
+
 
 
 name: 'Test xPack GNU sed via xpm'
@@ -45,9 +51,10 @@ on:
 
 jobs:
 
+
   linux-x64-test:
     name: 'linux-x64 GNU sed@${{github.event.inputs.version}} test'
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
 
     steps:
       - name: 'Show environment'
@@ -77,6 +84,9 @@ jobs:
         with:
           entrypoint: /bin/bash
           args: /github/workspace/build-assets/scripts/test.sh --image debian --package-version ${{github.event.inputs.package-version}} --version ${{github.event.inputs.version}} --xpm
+
+
+
 
 
   linux-arm64-test:
@@ -119,6 +129,9 @@ jobs:
           args: /github/workspace/build-assets/scripts/test.sh --image debian --package-version ${{github.event.inputs.package-version}} --version ${{github.event.inputs.version}} --xpm
 
 
+
+
+
   linux-arm-test:
     name: 'linux-arm GNU sed@${{github.event.inputs.version}} test'
     runs-on: [self-hosted, linux, arm, xbbla32]
@@ -159,9 +172,12 @@ jobs:
           args: /github/workspace/build-assets/scripts/test.sh --image debian --package-version ${{github.event.inputs.package-version}} --version ${{github.event.inputs.version}} --xpm
 
 
+
+
+
   darwin-x64-test:
     name: 'darwin-x64 GNU sed@${{github.event.inputs.version}} test'
-    runs-on: macos-12
+    runs-on: macos-13
 
     steps:
       - name: 'Show environment'
@@ -201,6 +217,9 @@ jobs:
 
       - name: 'Run ${{github.event.inputs.version}} xpm test'
         run: bash build-assets/scripts/test.sh --package-version ${{github.event.inputs.package-version}} --version ${{github.event.inputs.version}} --xpm
+
+
+
 
 
   darwin-arm64-test:
@@ -245,6 +264,10 @@ jobs:
 
       - name: 'Run ${{github.event.inputs.version}} xpm test'
         run: bash build-assets/scripts/test.sh --package-version ${{github.event.inputs.package-version}} --version ${{github.event.inputs.version}} --xpm
+
+
+
+
 
 
 # -----------------------------------------------------------------------------

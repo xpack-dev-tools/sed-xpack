@@ -3,6 +3,10 @@
 
 import type {SidebarsConfig} from '@docusaurus/plugin-content-docs';
 
+
+
+
+
 /**
  * Creating a sidebar enables you to:
  - create an ordered group of docs
@@ -32,7 +36,17 @@ const sidebars: SidebarsConfig = {
     {
       type: 'doc',
       id: 'user/index',
-      label: 'User Information'
+      label: 'User\'s Guide'
+    },
+    {
+      type: 'doc',
+      id: 'developer/index',
+      label: 'Contributor\'s Guide'
+    },
+    {
+      type: 'doc',
+      id: 'maintainer/index',
+      label: 'Maintainer\'s Guide'
     },
     {
       type: 'doc',
@@ -51,14 +65,9 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'doc',
-      id: 'developer/index',
-      label: 'Developer Information'
-    },
-    {
-      type: 'doc',
-      id: 'maintainer/index',
-      label: 'Maintainer Information'
-    },
+      id: 'about/index',
+      label: 'About'
+    }
   ],
 };
 

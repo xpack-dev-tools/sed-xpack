@@ -2,12 +2,15 @@
 # DO NOT EDIT!
 # Generated from xpacks/@xpack-dev-tools/xbb-helper/templates/workflows/*.
 #
-# This file is part of the xPack distribution.
-#   (https://xpack.github.io)
-# Copyright (c) 2021 Liviu Ionescu.
+# This file is part of the xPack project (http://xpack.github.io).
+# Copyright (c) 2021 Liviu Ionescu. All rights reserved.
 #
 # Permission to use, copy, modify, and/or distribute this software
 # for any purpose is hereby granted, under the terms of the MIT license.
+#
+# If a copy of the license was not distributed with this file, it can
+# be obtained from https://opensource.org/licenses/mit/.
+#
 # -----------------------------------------------------------------------------
 
 # https://help.github.com/en/actions
@@ -22,6 +25,9 @@
 # https://github.com/actions/download-artifact
 
 # -----------------------------------------------------------------------------
+
+
+
 
 
 name: 'Build xPack GNU sed linux-x64'
@@ -63,6 +69,7 @@ on:
         default: 'xpack-development'
 
 jobs:
+
 
   linux-x64-build:
     name: 'linux-x64 sed ${{github.event.inputs.version}} build'
@@ -135,7 +142,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: deploy-linux-x64
-          path: $/build/linux-x64/deploy/*
+          path: ${{github.workspace}}/build/linux-x64/deploy/*
           overwrite: true
 
       - name: 'Publish pre-release'
@@ -164,7 +171,7 @@ jobs:
 
   linux-x64-test:
     name: 'linux-x64 sed ${{github.event.inputs.version}} test'
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     needs: [linux-x64-upload]
 
     steps:
@@ -192,4 +199,6 @@ jobs:
 
       - name: 'Run ${{github.event.inputs.version}} native test'
         run: bash build-assets/scripts/test.sh --image github-actions-ubuntu-latest --version ${{github.event.inputs.version}} --base-url pre-release
+
+
 

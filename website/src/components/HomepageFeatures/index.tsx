@@ -15,6 +15,7 @@
 import clsx from 'clsx';
 import Heading from '@theme/Heading';
 import styles from './styles.module.css';
+import Link from '@docusaurus/Link';
 
 type FeatureItem = {
   title: string;
@@ -28,11 +29,7 @@ const FeatureList: FeatureItem[] = [
     Svg: require('@site/static/img/mosaic.svg').default,
     description: (
       <>
-        By design, <b>multiple versions</b> of the same tools
-        can be installed
-        at the same time on the same system. <b>Windows</b>, <b>macOS</b>, <b>GNU/Linux</b> are
-        supported. The tools include all
-        required libraries and can be installed in any folder.
+        The <b>xPack Framework</b> aims to automate the installation of <b>multiple versions</b> of development tools that are otherwise not easily available in common software distributions, across multiple platforms (<b>GNU/Linux</b>, <b>macOS</b>).
       </>
     ),
   },
@@ -41,7 +38,7 @@ const FeatureList: FeatureItem[] = [
     Svg: require('@site/static/img/check-badge.svg').default,
     description: (
       <>
-        The xPack binaries can be added to projects
+        The binary packages can be added to projects
         as <b>development dependencies</b>,
         and conveniently installed with <code>xpm install</code>.
         This feature also ensures reproducibility, which is particularly
@@ -54,10 +51,11 @@ const FeatureList: FeatureItem[] = [
     Svg: require('@site/static/img/globe.svg').default,
     description: (
       <>
-        The <b>xpm</b> tool complements <b>npm</b> with
+        The <b><Link to="https://xpack.github.io/xpm/">xpm</Link></b> CLI tool
+        complements <b><Link to="https://docs.npmjs.com/cli/">npm</Link></b> with
         several extra features specific to <b>C/C++ projects</b>.
         This allows the
-        binary xPacks to nicely integrate into the Node.js ecosystem,
+        binary packages to nicely integrate into the Node.js ecosystem,
         while still allowing the binary archives to be installed manually.
       </>
     ),
@@ -80,14 +78,19 @@ function Feature({title, Svg, description}: FeatureItem) {
 
 export default function HomepageFeatures(): JSX.Element {
   return (
-    <section className={styles.features}>
-      <div className="container">
-        <div className="row">
-          {FeatureList.map((props, idx) => (
-            <Feature key={idx} {...props} />
-          ))}
+    <>
+      <section className={styles.features}>
+        <div className="container">
+          <div className="row">
+            {FeatureList.map((props, idx) => (
+              <Feature key={idx} {...props} />
+            ))}
+          </div>
         </div>
+      </section>
+      <div className="text--center">
+        <h2><Link to="/docs/getting-started/"><span className="getting-started-link">Getting Started!</span></Link></h2>
       </div>
-    </section>
-  );
+    </>
+);
 }

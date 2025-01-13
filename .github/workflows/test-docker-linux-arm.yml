@@ -3,12 +3,15 @@
 # DO NOT EDIT!
 # Generated from xpacks/@xpack-dev-tools/xbb-helper/templates/workflows/*.
 #
-# This file is part of the xPack distribution.
-#   (https://xpack.github.io)
-# Copyright (c) 2021 Liviu Ionescu.
+# This file is part of the xPack project (http://xpack.github.io).
+# Copyright (c) 2021 Liviu Ionescu. All rights reserved.
 #
 # Permission to use, copy, modify, and/or distribute this software
 # for any purpose is hereby granted, under the terms of the MIT license.
+#
+# If a copy of the license was not distributed with this file, it can
+# be obtained from https://opensource.org/licenses/mit/.
+#
 # -----------------------------------------------------------------------------
 
 # https://help.github.com/en/actions
@@ -23,6 +26,9 @@
 # https://github.com/actions/download-artifact
 
 # -----------------------------------------------------------------------------
+
+
+
 
 
 # https://github.com/docker-library/official-images#architectures-other-than-amd64
@@ -64,6 +70,9 @@ on:
 # The scripts are executed in the Docker context by GitHub Actions,
 # so `native-test.sh` should be fine, it already takes care of updates.
 jobs:
+
+
+
 
   # https://en.wikipedia.org/wiki/Ubuntu_version_history
   # https://hub.docker.com/_/ubuntu
@@ -298,17 +307,17 @@ jobs:
           ref: ${{github.event.inputs.helper-git-ref}}
           fetch-depth: 3
 
-      - name: 'OpenSUSE 15.4 arm64'
-        uses: docker://opensuse/leap:15.4
+      - name: 'OpenSUSE 15.6 arm64'
+        uses: docker://opensuse/leap:15.6
         with:
           entrypoint: /bin/bash
-          args: /github/workspace/build-assets/scripts/test.sh --image opensuse/leap:15.4 --version ${{github.event.inputs.version}} --base-url ${{github.event.inputs.base_url}}
+          args: /github/workspace/build-assets/scripts/test.sh --image opensuse/leap:15.6 --version ${{github.event.inputs.version}} --base-url ${{github.event.inputs.base_url}}
 
-      - name: 'OpenSUSE 15.3 arm64'
-        uses: docker://opensuse/leap:15.3
+      - name: 'OpenSUSE 15.5 arm64'
+        uses: docker://opensuse/leap:15.5
         with:
           entrypoint: /bin/bash
-          args: /github/workspace/build-assets/scripts/test.sh --image opensuse/leap:15.3 --version ${{github.event.inputs.version}} --base-url ${{github.event.inputs.base_url}}
+          args: /github/workspace/build-assets/scripts/test.sh --image opensuse/leap:15.5 --version ${{github.event.inputs.version}} --base-url ${{github.event.inputs.base_url}}
 
   # ---------------------------------------------------------------------------
 
@@ -479,6 +488,8 @@ jobs:
           entrypoint: /bin/bash
           args: /github/workspace/build-assets/scripts/test.sh --image opensuse/tumbleweed --version ${{github.event.inputs.version}} --base-url ${{github.event.inputs.base_url}}
 
+
+
   # https://hub.docker.com/r/arm32v7/ubuntu/
   ubuntu-arm:
     name: 'arm sed ${{github.event.inputs.version}} test on Ubuntu stable'
@@ -617,51 +628,51 @@ jobs:
           entrypoint: /bin/bash # /usr/bin/linux32
           args: /github/workspace/build-assets/scripts/test.sh --image arm32v7/ubuntu:22.04 --version ${{github.event.inputs.version}} --base-url ${{github.event.inputs.base_url}}
 
-  # https://hub.docker.com/r/arm32v7/debian
-  debian-arm-latest:
-    name: 'arm sed ${{github.event.inputs.version}} test on Debian latest'
-    runs-on: [self-hosted, linux, arm, xbbla32]
+  # # https://hub.docker.com/r/arm32v7/debian
+  # debian-arm-latest:
+  #   name: 'arm sed ${{github.event.inputs.version}} test on Debian latest'
+  #   runs-on: [self-hosted, linux, arm, xbbla32]
 
-    steps:
-      - name: 'Show environment'
-        run: |
-          uname -a
-          lsb_release -sd
-          echo "whoami: $(whoami)"
-          echo "pwd: $(pwd)"
-          ls -lLA
-          env | sort | grep -E '^[^ \t]+='
+  #   steps:
+  #     - name: 'Show environment'
+  #       run: |
+  #         uname -a
+  #         lsb_release -sd
+  #         echo "whoami: $(whoami)"
+  #         echo "pwd: $(pwd)"
+  #         ls -lLA
+  #         env | sort | grep -E '^[^ \t]+='
 
-      - name: 'Clean working area' # Mandatory for self-hosted runners.
-        run: |
-          chmod -Rf a+w * || true
-          rm -rf * .git*
+  #     - name: 'Clean working area' # Mandatory for self-hosted runners.
+  #       run: |
+  #         chmod -Rf a+w * || true
+  #         rm -rf * .git*
 
-      # https://github.com/actions/checkout
-      - name: 'Checkout project'
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 3
+  #     # https://github.com/actions/checkout
+  #     - name: 'Checkout project'
+  #       uses: actions/checkout@v4
+  #       with:
+  #         fetch-depth: 3
 
-      - name: 'Checkout helper ${{github.event.inputs.helper-git-ref}}'
-        uses: actions/checkout@v4
-        with:
-          repository: xpack-dev-tools/xbb-helper-xpack
-          path: build-assets/xpacks/@xpack-dev-tools/xbb-helper
-          ref: ${{github.event.inputs.helper-git-ref}}
-          fetch-depth: 3
+  #     - name: 'Checkout helper ${{github.event.inputs.helper-git-ref}}'
+  #       uses: actions/checkout@v4
+  #       with:
+  #         repository: xpack-dev-tools/xbb-helper-xpack
+  #         path: build-assets/xpacks/@xpack-dev-tools/xbb-helper
+  #         ref: ${{github.event.inputs.helper-git-ref}}
+  #         fetch-depth: 3
 
-      - name: 'Debian testing arm'
-        uses: docker://arm32v7/debian:testing
-        with:
-          entrypoint: /bin/bash # /usr/bin/linux32
-          args: /github/workspace/build-assets/scripts/test.sh --image arm32v7/debian:testing --version ${{github.event.inputs.version}} --base-url ${{github.event.inputs.base_url}}
+  #     - name: 'Debian testing arm'
+  #       uses: docker://arm32v7/debian:testing
+  #       with:
+  #         entrypoint: /bin/bash # /usr/bin/linux32
+  #         args: /github/workspace/build-assets/scripts/test.sh --image arm32v7/debian:testing --version ${{github.event.inputs.version}} --base-url ${{github.event.inputs.base_url}}
 
-      - name: 'Debian latest arm'
-        uses: docker://arm32v7/debian:latest
-        with:
-          entrypoint: /bin/bash # /usr/bin/linux32
-          args: /github/workspace/build-assets/scripts/test.sh --image arm32v7/debian:latest --version ${{github.event.inputs.version}} --base-url ${{github.event.inputs.base_url}}
+  #     - name: 'Debian latest arm'
+  #       uses: docker://arm32v7/debian:latest
+  #       with:
+  #         entrypoint: /bin/bash # /usr/bin/linux32
+  #         args: /github/workspace/build-assets/scripts/test.sh --image arm32v7/debian:latest --version ${{github.event.inputs.version}} --base-url ${{github.event.inputs.base_url}}
 
   # https://en.wikipedia.org/wiki/Fedora_version_history
   # https://hub.docker.com/r/arm32v7/fedora
@@ -708,5 +719,10 @@ jobs:
   # - https://hub.docker.com/r/arm32v7/opensuse
   # arm32v7/opensuse:latest is leap 42.3 and fails due to http: URLs
   # (zypper lr -u)
+
+
+
+
+
 
 # -----------------------------------------------------------------------------

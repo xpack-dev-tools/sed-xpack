@@ -3,13 +3,24 @@
 # DO NOT EDIT!
 # Automatically generated from xbb-helper/templates/docusaurus/common.
 
-title: How to install the xPack GNU sed binaries
+title: Install Guide
+description: Explain the prerequisites, how to perform an automated or manual installation, how to uninstall, and the folder hierarchies.
+keywords:
+  - xpack
+  - sed
+  - prerequisites
+  - automated
+  - install
+  - uninstall
+  - files
 
 hide_table_of_contents: false
 
-date: 2020-09-27 11:09:00 +0300
+date: 2020-08-21 11:09:00 +0300
 
 ---
+
+
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -21,11 +32,17 @@ import LinksVsForwarders from '@site/src/components/LinksVsForwarders'
 
 import AutomaticInstallQuickTest from './_automatic-install-quick-test.mdx'
 import ManualInstallQuickTest from './_manual-install-quick-test.mdx'
-import FolderHierarchies from './_folder-hierarchies.mdx'
+
+import FoldersHierarchiesLinux from './_folders-hierarchies-linux.mdx'
+import FoldersHierarchiesWindows from './_folders-hierarchies-windows.mdx'
+import FoldersHierarchiesMacOS from './_folders-hierarchies-macos.mdx'
+
 import Miscellaneous from './_miscellaneous.mdx'
 import Testing from './_testing.mdx';
 
 {/* ------------------------------------------------------------------------ */}
+
+# How to install the xPack GNU sed
 
 [![GitHub package.json version](https://img.shields.io/github/package-json/v/xpack-dev-tools/sed-xpack)](https://github.com/xpack-dev-tools/sed-xpack/blob/xpack/package.json)
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/xpack-dev-tools/sed-xpack)](https://github.com/xpack-dev-tools/sed-xpack/releases/)
@@ -36,34 +53,32 @@ import Testing from './_testing.mdx';
 
 The **xPack GNU sed** can be installed automatically, using the `xpm` command
 (the recommended method), or manually, by downloading and unpacking one of the
-portable archives.
+platform specific archives.
 
 ## Automated install
 
 The easiest (and recommended) way to install GNU sed
-is by using the **binary xPack**, available
+is via **xpm** and the package available
 as <a href={`https://www.npmjs.com/package/@xpack-dev-tools/sed`}><code>@xpack-dev-tools/sed</code></a> from
 the [`npmjs.com`](https://www.npmjs.com) registry.
 
 <details>
-<summary>xPacks 101</summary>
+<summary>xpm packages (xPacks) refresher</summary>
 
-While the initial appearance may seem complex, utilizing xPacks is,
-in fact, straightforward. The design rationale is to automate frequent
-operations that occur during software development, in this case the
-installation of
-dependencies, and to ensure reproducibility.
+**xpm packages**, abbreviated as **xPacks**, are general-purpose,
+language-neutral software packages.
+They use **the same format as npm packages**,
+which is a collection of files/folders
+and a `package.json` file with the package metadata.
 
-xPacks are standard archives that are extracted into separate folders
-within the project. If the xPacks contain
-executables, links/forwarders to
-these executables are created in a `.bin` folder,
-eliminating the need to add multiple folders to the `PATH`.
+**xpm** can install source and binary packages.
+Binary packages include references to regular archives with the platform
+specific binaries (such as `.tar.gz` for Unix or `.zip` for Windows).
+These archives are unpacked and links/forwarders to
+the executables are created in a `.bin` folder.
 
-Given that some binary xPacks, such as toolchains, can be quite large,
-the archives are extracted only once into a user global location to
-conserve space. In projects, instead of duplicating the content of these
-archives, symbolic links are created.
+For more details, please see the previous explanation in the
+[Getting Started](/docs/getting-started/#xpm-packages) page.
 
 </details>
 
@@ -135,16 +150,16 @@ If multiple binary packages are installed, in order to allow
 the executables to be accessed, one possible solution is to add
 all `<package>/.content/bin` folders to the `PATH`.
 
-To simplify things, **npm** employs a separate `node_modules/.bin` folder
+To simplify things, **npm** employs a separate `<project>/node_modules/.bin` folder
 where it places links/forwarders
 pointing to the actual executable files.
 
 Similarly, **xpm** adds links/forwarders into
-a separate `xpacks/.bin` folder.
+a separate `<project>/xpacks/.bin` folder.
 
 With this setup, the project needs to prepend only this `.bin` folder
-to the `PATH`, and all the required tools are accesible
-and prefered to possible system tools.
+to the `PATH`, and all the required tools are accessible
+and preferred to possible system tools.
 
 </details>
 
@@ -212,17 +227,26 @@ already present.
 
 In addition to `name` & `version`, the minimal `package.json` must
 include a property named `xpacks`, even empty. This property is
-mandatory to identify the package as an **xPack**.
+mandatory to identify the package as an **xpm package**.
 
 </details>
 
 ### Install into the project
 
 The next step is to install the
-**sed** package into the project:
+**sed** package into the project.
+
+The command to install the **latest** available version of **sed** is:
 
 <CodeBlock language="sh"> {
 `xpm install @xpack-dev-tools/sed@latest --verbose
+`} </CodeBlock>
+
+
+To install a **specific version**, specify it explicitly:
+
+<CodeBlock language="sh"> {
+`xpm install @xpack-dev-tools/sed@${customField('version')} --verbose
 `} </CodeBlock>
 
 <Tabs groupId="operating-systems">
@@ -372,7 +396,7 @@ install the packages globally will fail with _already installed_.
 <details>
 <summary>PATH setup</summary>
 
-In order to access the GNU RISC-V Embedded GCC binaries installed in
+In order to access the GNU sed binaries installed in
 the user global xPacks store,
 the project build configurations need a PATH adjustment:
 
@@ -404,7 +428,7 @@ The binaries do not use any form of installer; instead they
 are distributed as
 portable {props.isWindows ? <code>.zip</code> : <code>.tar.gz</code>} archives;
 therefore they do not require to run any uninstaller; simply removing the
-links and possibly the user global xPack store folder and
+links and possibly the user global xPacks store folder and
 the user xPack cache folder is enough.
 
 To remove the <LinksVsForwarders isWindows={props.isWindows}/> created by
@@ -421,7 +445,7 @@ and ask **xpm** to uninstall the package:
 `xpm uninstall @xpack-dev-tools/sed --verbose
 `} </CodeBlock>
 
-To completely remove the package from the user global xPack store:
+To completely remove the package from the user global xPacks store:
 
 <CodeBlock language="sh"> {
 `xpm uninstall --global @xpack-dev-tools/sed --verbose
@@ -453,7 +477,7 @@ For a thorough clean-up, please note that **xpm** uses only two folders:
 They can be removed at any time and space reclaimed;
 **xpm** will recreate them on new installs.
 
-However, projects linking to the user global xPack store will fail with
+However, projects linking to the user global xPacks store will fail with
 broken paths.
 
 </details>
@@ -549,8 +573,29 @@ and `.content` to store the unpacked archive.
 
 <ManualInstallQuickTest/>
 
-<FolderHierarchies/>
+## Folders hierarchy
+
+After install, the package creates a hierarchy of folders like the following
+(only the first two depth levels are shown):
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="linux" label="GNU/Linux">
+
+<FoldersHierarchiesLinux />
+
+</TabItem>
+
+<TabItem value="macos" label="macOS">
+
+<FoldersHierarchiesMacOS />
+
+</TabItem>
+
+</Tabs>
 
 <Miscellaneous/>
 
 <Testing/>
+
+
