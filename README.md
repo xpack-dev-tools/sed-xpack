@@ -5,7 +5,7 @@
 
 # The xPack GNU sed
 
-A standalone, cross-platform (GNU/Linux, macOS) binary distribution of GNU sed,
+A standalone, cross-platform (macOS, GNU/Linux) binary distribution of GNU sed,
 intended for reproducible builds.
 
 ## Project documentation
