@@ -73,7 +73,8 @@
     "liquidjs": "^10.19.1"
   },
   "topConfig": {
-    "longName": "GNU sed"
+    "longName": "GNU sed",
+    "shortName": "sed"
   },
   "engines": {
     "node": " >=18.0.0"
