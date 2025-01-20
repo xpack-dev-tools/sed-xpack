@@ -57,14 +57,12 @@
     ]
   },
   "websiteConfig": {
-    "customFields": {
-      "programName": "sed",
-      "branding": "sed (GNU sed) ",
-      "isSecondaryTool": "true",
-      "$link": "https://ftp.gnu.org/gnu/sed/",
-      "sedReleaseDate": "6 Nov 2022",
-      "hasTwoNumbersVersion": "true"
-    }
+    "programName": "sed",
+    "branding": "sed (GNU sed) ",
+    "hasTwoNumbersVersion": "true",
+    "isSecondaryTool": "true",
+    "$link": "https://ftp.gnu.org/gnu/sed/",
+    "sedReleaseDate": "6 Nov 2022"
   },
   "engines": {
     "node": ">=18.0"
