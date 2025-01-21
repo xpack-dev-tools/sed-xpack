@@ -275,7 +275,7 @@ const config: Config = {
           label: 'GitHub',
           items: [
             {
-              label: `sed-xpack`,
+              label: `sed-xpack project`,
               href: `https://github.com/xpack-dev-tools/sed-xpack/`,
             },
             {
@@ -348,7 +348,7 @@ const config: Config = {
               href: 'https://www.paypal.com/donate/?hosted_button_id=5MFRG9ZRBETQ8',
             },
             {
-              label: 'GitHub sed-xpack',
+              label: 'GitHub sed-xpack project',
               href: 'https://github.com/xpack-dev-tools/sed-xpack/',
             },
             {
