@@ -52,10 +52,6 @@
           "fileName": "xpack-sed-4.9.0-3-linux-arm64.tar.gz",
           "sha256": "f9dd388ac2bd78aa57b7bacfbf96a2b2576718d15d49a77312990b65b21f012b"
         },
-        "linux-arm": {
-          "fileName": "xpack-sed-4.9.0-3-linux-arm.tar.gz",
-          "sha256": "ff4d2f88d9959beb33a2526fb22adbbc4cc476e868b6ab3e6eb5909090811222"
-        },
         "linux-x64": {
           "fileName": "xpack-sed-4.9.0-3-linux-x64.tar.gz",
           "sha256": "c28ed7c8567c7086b04426c553da42940bc9e66870a120399d6d198ecb8b3580"
