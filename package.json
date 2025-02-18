@@ -34,7 +34,7 @@
   },
   "license": "MIT",
   "xpack": {
-    "minimumXpmRequired": "0.16.3",
+    "minimumXpmRequired": "0.20.5",
     "binaries": {
       "destination": "./.content",
       "baseUrl": "https://github.com/xpack-dev-tools/sed-xpack/releases/download/v4.9.0-3",
@@ -58,7 +58,7 @@
         }
       }
     },
-    "bin": {
+    "executables": {
       "gsed": "./.content/bin/gsed",
       "sed": "./.content/bin/sed"
     }
