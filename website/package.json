@@ -77,7 +77,8 @@
     "hasTwoNumbersVersion": "true",
     "isSecondaryTool": "true",
     "$link": "https://ftp.gnu.org/gnu/sed/",
-    "sedReleaseDate": "6 Nov 2022"
+    "sedReleaseDate": "6 Nov 2022",
+    "shareOnTwitter": "true"
   },
   "engines": {
     "node": ">=18.0"
