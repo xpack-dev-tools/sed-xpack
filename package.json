@@ -71,6 +71,7 @@
   "topConfig": {
     "descriptiveName": "GNU sed",
     "permalinkName": "sed",
+    "skipCiTests": "true",
     "useSelfHostedRunners": "true"
   },
   "engines": {
