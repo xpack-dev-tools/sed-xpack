@@ -69,12 +69,13 @@
     "liquidjs": "^10.19.1"
   },
   "topConfig": {
-    "descriptiveName": "GNU sed",
+    "descriptiveName": "xPack GNU sed",
+    "upstreamDescriptiveName": "GNU sed",
     "permalinkName": "sed",
     "skipCiTests": "true",
-    "useSelfHostedRunners": "true"
+    "useSelfHostedRunners": "false"
   },
   "engines": {
-    "node": " >=18.0.0"
+    "node": " >=20.0"
   }
 }
