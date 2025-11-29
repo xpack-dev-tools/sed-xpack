@@ -68,7 +68,7 @@ xpm link -C ~/Work/xpack-dev-tools/xbb-helper-xpack.git
 ## Release schedule
 
 The xPack GNU sed release schedule generally follows the original GNU
-[releases](https://ftp.gnu.org/gnu/sed/).
+[releases](https://ftpmirror.gnu.org/gnu/sed/).
 
 ## How to make new releases
 
@@ -93,7 +93,7 @@ In the `xpack-dev-tools/sed-xpack` Git repo:
 
 ### Check the latest upstream release
 
-Check the GNU sed [releases](https://ftp.gnu.org/gnu/sed/)
+Check the GNU sed [releases](https://ftpmirror.gnu.org/gnu/sed/)
 and compare the the xPack [Releases](https://github.com/xpack-dev-tools/sed-xpack/releases/).
 
 ### Increase the version
@@ -623,7 +623,7 @@ In the `xpack/web-jekyll` GitHub repo:
 - select the `develop` branch
 - copy the new file to `_posts/releases/sed`
 - update version and date from last
-[release](https://ftp.gnu.org/gnu/sed/).
+[release](https://ftpmirror.gnu.org/gnu/sed/).
 
 If any, refer to closed
 [issues](https://github.com/xpack-dev-tools/sed-xpack/issues/).

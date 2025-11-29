@@ -4,9 +4,14 @@
   "description": "A binary xpm package with the GNU sed executables",
   "main": "",
   "scripts": {
-    "postversion": "git push origin --all && git push origin --tags",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "liquidjs": "liquidjs"
+    "generate-top-commons": "bash node_modules/@xpack/npm-packages-helper/maintenance-scripts/generate-top-commons.sh --xpack-dev-tools",
+    "npm-install": "npm install",
+    "npm-link-helpers": "npm link @xpack/npm-packages-helper @xpack/docusaurus-template-liquid",
+    "npm-outdated": "npm outdated",
+    "npm-pack": "npm pack",
+    "npm-link": "npm link",
+    "deep-clean": "del-cli node_modules package-lock.json *.tgz",
+    "postversion": "git push origin --all && git push origin --tags"
   },
   "repository": {
     "type": "git",
@@ -29,7 +34,7 @@
   },
   "license": "MIT",
   "xpack": {
-    "minimumXpmRequired": "0.16.3",
+    "minimumXpmRequired": "0.20.5",
     "binaries": {
       "destination": "./.content",
       "baseUrl": "https://github.com/xpack-dev-tools/sed-xpack/releases/download/v4.9.0-3",
@@ -47,19 +52,30 @@
           "fileName": "xpack-sed-4.9.0-3-linux-arm64.tar.gz",
           "sha256": "f9dd388ac2bd78aa57b7bacfbf96a2b2576718d15d49a77312990b65b21f012b"
         },
-        "linux-arm": {
-          "fileName": "xpack-sed-4.9.0-3-linux-arm.tar.gz",
-          "sha256": "ff4d2f88d9959beb33a2526fb22adbbc4cc476e868b6ab3e6eb5909090811222"
-        },
         "linux-x64": {
           "fileName": "xpack-sed-4.9.0-3-linux-x64.tar.gz",
           "sha256": "c28ed7c8567c7086b04426c553da42940bc9e66870a120399d6d198ecb8b3580"
         }
       }
     },
-    "bin": {
+    "executables": {
       "gsed": "./.content/bin/gsed",
       "sed": "./.content/bin/sed"
     }
+  },
+  "devDependencies": {
+    "del-cli": "^7.0.0",
+    "json": "^11.0.0",
+    "liquidjs": "^10.23.0"
+  },
+  "topConfig": {
+    "descriptiveName": "xPack GNU sed",
+    "upstreamDescriptiveName": "GNU sed",
+    "permalinkName": "sed",
+    "skipCiTests": "true",
+    "useSelfHostedRunners": "false"
+  },
+  "engines": {
+    "node": " >=20.0"
   }
 }

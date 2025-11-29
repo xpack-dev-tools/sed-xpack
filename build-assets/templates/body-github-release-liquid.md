@@ -4,7 +4,7 @@ TODO: select one
 
 Version **{{releaseVersion}}** is a maintenance release of the **xPack GNU sed** package; it fixes ...
 
-Version **{{releaseVersion}}** is a new release of the **xPack GNU sed** package, following the upstream GNU sed [release](https://ftp.gnu.org/gnu/sed/).
+Version **{{releaseVersion}}** is a new release of the **xPack GNU sed** package, following the upstream GNU sed [release](https://ftpmirror.gnu.org/gnu/sed/).
 
 [Continue reading »](will-be-updated-shortly)
 
