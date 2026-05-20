@@ -1,0 +1,8 @@
+{
+  "descriptiveName": "xPack GNU sed",
+  "permalinkName": "sed",
+  "preferredName": "xPack GNU sed",
+  "upstreamDescriptiveName": "GNU sed",
+  "skipCiTests": true,
+  "useSelfHostedRunners": false
+}
