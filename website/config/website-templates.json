@@ -1,0 +1,9 @@
+{
+  "branding": "sed (GNU sed) ",
+  "programName": "sed",
+  "sedReleaseDate": "6 Nov 2022",
+  "$link": "https://ftpmirror.gnu.org/gnu/sed/",
+  "hasTwoNumbersVersion": true,
+  "isSecondaryTool": true,
+  "shareOnTwitter": true
+}
